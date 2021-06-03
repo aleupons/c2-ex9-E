@@ -11,7 +11,6 @@ const tyrion = new Asesor("Tyrion", "Lannister", 40, daenerys);
 const bronn = new Escudero("Bronn", "AguasNegras", 54, 0, jaime);
 
 const personajes = [joffrey, jaime, tyrion, daenerys, bronn];
-export default personajes;
 
 const hablanLuchadores = (personajes) =>
   personajes
@@ -43,3 +42,5 @@ const resumenPersonajes = (personajes) =>
         }))
         .sort((personajeA, personajeB) => personajeA.edad - personajeB.edad),
     }));
+
+export default personajes;
