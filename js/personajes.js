@@ -43,5 +43,3 @@ const resumenPersonajes = (personajes) =>
         }))
         .sort((personajeA, personajeB) => personajeA.edad - personajeB.edad),
     }));
-
-console.log(resumenPersonajes(personajes));
