@@ -80,6 +80,15 @@ const pintarPersonajes = (personajes) => {
     );
     const habla = acciones.querySelector("button");
     const muere = acciones.querySelector("button~button");
+    const comunicaciones = document.querySelector(".comunicaciones");
+    muere.addEventListener("click", (event) => {
+      event.preventDefault();
+      personaje.muere();
+    });
+    habla.addEventListener("click", (event) => {
+      event.preventDefault();
+      comunicaciones.textContent = personaje.comunicar();
+    });
     listaPersonajes.append(personajeDummy);
   }
 };
