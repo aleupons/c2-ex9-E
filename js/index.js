@@ -90,6 +90,7 @@ const pintarPersonajes = (personajes) => {
       event.preventDefault();
       comunicaciones.textContent = personaje.comunicar();
       comunicaciones.classList.add("on");
+      comunicaciones.style.setProperty("font-size", "80px");
       setTimeout(() => {
         comunicaciones.classList.remove("on");
       }, 2000);
