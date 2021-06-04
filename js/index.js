@@ -78,18 +78,41 @@ const pintarPersonajes = (personajes) => {
     const acciones = personajeDummy.querySelector(
       ".personaje-overlay .acciones"
     );
-    const habla = acciones.querySelector("button");
-    const muere = acciones.querySelector("button~button");
+    // Implementando función comunicar
+
+    const habla = acciones.querySelector("#accion_hablar");
     const comunicaciones = document.querySelector(".comunicaciones");
-    muere.addEventListener("click", (event) => {
-      event.preventDefault();
-      personaje.muere();
-    });
+    console.log(comunicaciones);
+
+    // eslint-disable-next-line no-loop-func
+
     habla.addEventListener("click", (event) => {
       event.preventDefault();
       comunicaciones.textContent = personaje.comunicar();
+      comunicaciones.classList.add("on");
+      setTimeout(() => {
+        comunicaciones.classList.remove("on");
+      }, 2000);
+
+      const imgPersonaje = comunicaciones.querySelector(".imgPersonaje");
+      imgPersonaje.src = `img/${personaje.nombre}.jpg`;
+      imgPersonaje.alt = `${personaje.nombre} de ${personaje.familia}`;
+
+      console.log(personaje.comunicar());
     });
+
+    const muere = acciones.querySelector("#accion_morir");
+
+
+
+
+
+
+
+
+
     listaPersonajes.append(personajeDummy);
   }
 };
+
 pintarPersonajes(personajes);

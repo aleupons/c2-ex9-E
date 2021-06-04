@@ -82,6 +82,7 @@ img.card-img-top {
   right: 100vw;
   left: -100vw;
 }
+
 .comunicaciones.on {
   right: 0;
   left: 0;
@@ -93,6 +94,7 @@ img.card-img-top {
   right: 10px;
   bottom: 10px;
 }
+
 .emoji {
   font-style: normal;
   position: absolute;
