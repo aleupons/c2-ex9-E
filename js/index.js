@@ -78,14 +78,13 @@ const pintarPersonajes = (personajes) => {
     const acciones = personajeDummy.querySelector(
       ".personaje-overlay .acciones"
     );
-    // Implementando función comunicar
 
-    const habla = acciones.querySelector("#accion_hablar");
+    // Implementando función comunicar
+    const habla = acciones.querySelector("button");
     const comunicaciones = document.querySelector(".comunicaciones");
-    console.log(comunicaciones);
+    const muere = acciones.querySelector("button~button");
 
     // eslint-disable-next-line no-loop-func
-
     habla.addEventListener("click", (event) => {
       event.preventDefault();
       comunicaciones.textContent = personaje.comunicar();
@@ -94,23 +93,12 @@ const pintarPersonajes = (personajes) => {
       setTimeout(() => {
         comunicaciones.classList.remove("on");
       }, 2000);
-
-      const imgPersonaje = comunicaciones.querySelector(".imgPersonaje");
-      imgPersonaje.src = `img/${personaje.nombre}.jpg`;
-      imgPersonaje.alt = `${personaje.nombre} de ${personaje.familia}`;
-
-      console.log(personaje.comunicar());
     });
 
-    const muere = acciones.querySelector("#accion_morir");
-
-
-
-
-
-
-
-
+    muere.addEventListener("click", (event) => {
+      event.preventDefault();
+      personaje.muere();
+    });
 
     listaPersonajes.append(personajeDummy);
   }
