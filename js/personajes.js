@@ -24,9 +24,6 @@ for (const mensaje of mensajes) {
   console.log(mensaje);
 }
 
-tyrion.muere();
-jaime.muere();
-
 const resumenPersonajes = (personajes) =>
   personajes
     .map((personaje) => personaje.constructor.name)
